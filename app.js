@@ -4,8 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// MongoDB Connect
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/shopper');
+mongoose.Promise = global.Promise;
+
+
+var indexRouter = require('./routes/indexRoutes');
+var usersRouter = require('./routes/userRoutes');
 
 var app = express();
 
