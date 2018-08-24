@@ -9,12 +9,12 @@ var User = require('./userModel')
 
 // insert
 var person = new User({
-    firstname: 'John 1',
-    lastname: 'Wick 1',
-    email: 'john889911@wick.com',
+    firstname: 'John 2',
+    lastname: 'Wick 2',
+    email: 'John 889911@wick.com ',
     age: 42,
-    status: 'active',
-    created_date: 01-01-2018
+    status: 'pending',
+    // created_date: 01-01-2018
 })
 person.save((err, data) => {
     if(err) console.log(err)
