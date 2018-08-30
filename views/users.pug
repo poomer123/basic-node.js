@@ -40,4 +40,11 @@ block content
                     p= 'Age : ' + user.age
                     p= 'Email : ' + user.email
                     p(class=(user.status == 'active' ? 'text-success' : 'text-danger'))= 'Status : ' + user.status
+                    div
+                        ul.list-inline
+                            li.list-inline-item
+                                button.btn.btn-primary Edit
+                            li.list-inline-item
+                                form(action="/users/delete/"+ user._id, method="post")
+                                    button(type="submit").btn.btn-danger Del
                     hr

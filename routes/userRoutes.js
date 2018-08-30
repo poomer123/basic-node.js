@@ -19,4 +19,12 @@ router.post('/add', function(req, res, next) {
     })
 });
 
+
+router.post('/delete/:_id', function(req, res, next) {
+    User.findByIdAndRemove(req.params._id, (err, data) => {
+        if(err) console.log(err)
+        res.redirect('/users')
+    })
+});
+
 module.exports = router;
