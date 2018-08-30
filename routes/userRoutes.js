@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var User = require('../models/userModel')
-
+var _ = require('lodash')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -9,6 +9,15 @@ router.get('/', function(req, res, next) {
         res.render('users', {users : data})
     })
 })
+
+router.post('/search', function(req, res, next) {
+    var search = _.omitBy(req.body, _.isEmpty)
+    console.log(req.body, search)
+    User.find(search, (err, data) => {
+        res.render('users', {users : data})
+    })
+})
+
 
 router.post('/add', function(req, res, next) {
     console.log(req.body)
