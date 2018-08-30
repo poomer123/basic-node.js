@@ -5,9 +5,18 @@ var User = require('../models/userModel');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  User.find().exec((err, data) => {
-    res.render('users', {users : data})
-  })
+    User.find().sort({created_date: -1}).exec((err, data) => {
+        res.render('users', {users : data})
+    })
+});
+
+router.post('/add', function(req, res, next) {
+    console.log(req.body)
+    var doc = new User(req.body)
+    doc.save((err, data) => {
+        if(err) console.log(err)
+        res.redirect('/users')
+    })
 });
 
 module.exports = router;
