@@ -9,10 +9,6 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/shopper');
 mongoose.Promise = global.Promise;
 
-
-var indexRouter = require('./routes/indexRoutes');
-var usersRouter = require('./routes/userRoutes');
-
 var app = express();
 
 // view engine setup
@@ -20,15 +16,22 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: false }))
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Web
+var indexRouter = require('./routes/indexRoutes');
+var usersRouter = require('./routes/userRoutes');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+// Api
+var userApis = require('./routes/api/userRoutes')
+app.use('/api/users', userApis);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
