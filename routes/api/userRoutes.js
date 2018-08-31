@@ -27,14 +27,54 @@ router.get('/:_id', (req, res, next) => {
     })
 })
 
-
 // Create User
-
+router.post('/', (req, res, next) => {
+    var doc = new User(req.body)
+    doc.save((err, data) => {
+        if(err) {
+            return res.status(500).send({
+                error : {message: err.message, code: err.code}
+            })
+        }
+        res.status(200).send({
+            success: {
+                message: 'Created user successfully.'
+            }
+        })
+    })
+})
 
 // Delete User
-
+router.delete('/:_id', (req, res, next) => {
+    User.findByIdAndRemove( req.params._id, (err, data) => {
+        if(err) {
+            return res.status(500).send({
+                error : {message: err.message, code: err.code}
+            })
+        }
+        res.status(200).send({
+            success: {
+                message: 'Deleted user successfully.'
+            }
+        })
+    })
+})
 
 // Update User
+router.put('/:_id', (req, res, next) => {
+    User.findByIdAndUpdate( req.params._id, req.body, (err, data) => {
+        if(err) {
+            return res.status(500).send({
+                error : {message: err.message, code: err.code}
+            })
+        }
+        res.status(200).send({
+            success: {
+                message: 'Updated user successfully.'
+            }
+        })
+    })
+})
 
 
 module.exports = router
