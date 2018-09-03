@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f349"},"firstname":"Olan","lastname":"Samritjiarapon","email":"olan@olanlab.com","age":{"$numberInt":"33"},"status":"active"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f34a"},"firstname":"Sara","lastname":"JR","email":"sara@gmail.com","age":{"$numberInt":"19"},"status":"active"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f34b"},"firstname":"John","lastname":"Gerrand","email":"john@gmail.com","age":{"$numberInt":"33"},"status":"active"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f34c"},"firstname":"Mary","lastname":"Gig","email":"mary@gmail.com","age":{"$numberInt":"42"},"status":"active"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f34d"},"firstname":"Jimmy","lastname":"Beckham","email":"jimmy@gmail.com","age":{"$numberInt":"24"},"status":"pending"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f34e"},"firstname":"Tony","lastname":"Bee","email":"tony@gmail.com","age":{"$numberInt":"15"},"status":"pending"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f34f"},"firstname":"Hope","lastname":"Henderson","email":"hope@gmail.com","age":{"$numberInt":"50"},"status":"pending"}
+{"_id":{"$oid":"5b7b8216fdd0dc9ab652f350"},"firstname":"Bank","lastname":"Jar","email":"bank@gmail.com","age":{"$numberInt":"60"},"status":"pending"}
+{"_id":{"$oid":"5b7e878ba9b22427e8bdd62a"},"firstname":"John","lastname":"Wick","email":"john8899@wick.com","age":{"$numberInt":"12"},"status":"active","created_date":{"$date":{"$numberLong":"-2018"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b7f7f2f81745b744463b5f7"},"firstname":"John 1","lastname":"Wick 1","email":"john889911@wick.com","age":{"$numberInt":"99"},"status":"active","created_date":{"$date":{"$numberLong":"-2018"}},"__v":{"$numberInt":"0"}}
